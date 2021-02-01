@@ -1,15 +1,27 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
+const mongoose = require('mongoose');
 
 const app = express();
 
-app.use(express.static('/css'));
+//DB Config
+const db = require('./config/keys').MongoURI;
+
+mongoose.connect(db, {
+    useNewUrlParser: true, useUnifiedTopology: true
+})
+.then(() => console.log("Mongoose Connected..."))
+.catch(err => console.log(err));
+
 
 //Middleware
 
 //EJS
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
+
+// Bodyparser
+app.use(express.urlencoded({extended: false}));
 
 // Routes
 app.use('/', require('./routes/index'));

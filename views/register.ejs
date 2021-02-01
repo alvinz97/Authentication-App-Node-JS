@@ -5,10 +5,14 @@
 
             <p>Register</p>
 
-            <form action="auth/register" method="post" class="text-left">
+            <form action="register" method="post" class="text-left">
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Name" value="<%- typeof name != 'undefined' ? name : '' %>"class="form-control form-control-sm" >
+                </div>
                 <div class="mb-3">
                     <label class="form-label">User name</label>
-                    <input type="text" id="userName" name="userName" placeholder="Enter User Name" value="<%- typeof name != 'undefined' ? name : '' %>"class="form-control form-control-sm" >
+                    <input type="text" id="userName" name="userName" placeholder="Enter User Name" value="<%- typeof userName != 'undefined' ? userName : '' %>"class="form-control form-control-sm" >
                 </div>
 
                 <div class="mb-3">
