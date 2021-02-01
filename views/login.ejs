@@ -5,7 +5,9 @@
 
             <p>Login</p>
 
-            <form action="auth/login" method="post" class="text-left">
+            <%- include('partials/messages.ejs') %> 
+
+            <form action="login" method="post" class="text-left">
                 <div class="mb-3">
                     <label class="form-label">Email address</label>
                     <input type="email" id="email" name="email" placeholder="Enter Email Address" value="<%- typeof email != 'undefined' ? email : '' %>"class="form-control form-control-sm" >

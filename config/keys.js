@@ -1,3 +1,7 @@
+const dotenv = require('dotenv');
+
+dotenv.config();
+
 module.exports = {
-    MongoURI: 'mongodb+srv://rusiru_mongo_db:kulathunga@Gavi@cluster0.aerds.mongodb.net/test?retryWrites=true&w=majority'
+    MongoURI: process.env.DB_STRING
 }
